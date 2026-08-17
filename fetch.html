@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo fetch</title>
+  <style>
+    table {
+      width: 80vw;
+      border-collapse: collapse;
+      margin: auto;
+    }
+    th, td {
+      border: 2px solid red;
+      text-align: center;
+    }
+  </style>
+  <script>
+    const url = 'https://dummyjson.com/products?limit=50&skip=6';
+    async function loadproducts() {   // async function outer function hota hai jb hum await use karte hai
+      try {
+        const res = await fetch(url);
+        console.log("res=", res);
+        const data = await res.json();
+        console.log("data=", data.products);
+        let row = "";
+        data.products.forEach((i, index) => {
+          row += `<tr>
+                    <td>${index + 1}</td>
+                    <td>${i.title}</td>
+                    <td><img src="${i.images[0]}" width="50" height="50"></td>
+                    <td>${i.price}</td>
+                    <td>${i.rating}</td>
+                    <td>${i.stock}</td>
+                    <td>${i.brand}</td>
+                    <td>${i.category}</td>
+                  </tr>`;
+        });
+        const el = document.getElementById('data');
+        el.innerHTML = row;
+      } catch (err) {
+        console.log("err=", err);
+      }
+    }
+    loadproducts();
+  </script>
+</head>
+<body>
+  <h1><center>List of Products</center></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>sr.no</th>
+        <th>Title</th>
+        <th>Image</th>
+        <th>Price($)</th>
+        <th>Rating</th>
+        <th>Stock</th>
+        <th>Brand</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody id="data">
+      
+    </tbody>
+  </table>
+</body>
+</html>
