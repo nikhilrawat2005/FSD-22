@@ -3,12 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book App using CDN</title>
+    <style>
+        .book{
+            width: 250px;
+            height: 250px;
+            border: 2px solid green;
+            text-align: center;
+            margin: auto;
+            background-color: aqua;
+            border-radius: 10px;
+            padding: 100px;
+        }
+        .bookstore{
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 10px;
+        }
+    </style>
 </head>
 <body>
+    <h1>
+        <center>BookStore</center>
+    </h1>
     <div id="root"></div>
 </body>
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="./index.js"></script>
+<script type="module" src="./index.js"></script>
 </html>
