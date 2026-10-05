@@ -1,4 +1,4 @@
-import Book from "./book.js";
+import Book from "./Book.js";
 const bookdata=[
     {image: "",title:"ReactJs",price:465},
     {image: "",title:"NodeJs",price:571},

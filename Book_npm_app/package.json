@@ -1,0 +1,21 @@
+{
+  "name": "book_npm_app",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "react"
+  ],
+  "license": "ISC",
+  "author": "nikhil",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "parcel": "^2.16.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}
